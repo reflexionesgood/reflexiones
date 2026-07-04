@@ -72,11 +72,9 @@ h2 {
   position: relative;
 }
 
-video {
+iframe {
   width: 100%;
   display: block;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
 }
 
 .video-overlay {
