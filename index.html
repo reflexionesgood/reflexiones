@@ -1,138 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palabras Good - Inspiración y Fe</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palabras Good</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>
-    <div class="header-content">
-        <div class="logo-container">
-            <img src="assets/logo.png" alt="Logo Palabras Good" class="logo">
-            <h1>Palabras <span>Good</span></h1>
-        </div>
-        <p class="subtitle">✝️ Frases bíblicas, reflexiones y esperanza</p>
-    </div>
+<header class="hero">
+  <img src="assets/logo.png" alt="Logo" class="logo">
+  <h1>Palabras Good</h1>
+  <p>Frases bíblicas, reflexiones y mensajes de esperanza</p>
 </header>
 
-<nav class="main-nav">
-    <ul>
-        <li><a href="#verse"><i class="fas fa-bible"></i> Versículo</a></li>
-        <li><a href="#videos"><i class="fas fa-video"></i> Videos</a></li>
-        <li><a href="#reflexion"><i class="fas fa-heart"></i> Reflexión</a></li>
-    </ul>
-</nav>
+<section class="verse-section">
+  <h2>Versículo del Día</h2>
+  <div id="verse-box">Cargando versículo...</div>
+</section>
 
-<main>
-    <!-- Sección Versículo del día -->
-    <section id="verse" class="verse-section">
-        <div class="section-header">
-            <i class="fas fa-bible icon-title"></i>
-            <h2>Versículo del día</h2>
-        </div>
-        <div id="verse-box" class="verse-box">
-            <div class="loading-spinner"></div>
-            <p>Cargando palabra de vida...</p>
-        </div>
-        <button onclick="getVerse()" class="btn-refresh">
-            <i class="fas fa-sync-alt"></i> Nuevo versículo
-        </button>
-    </section>
+<section class="videos-section">
+  <h2>Videos Bíblicos</h2>
 
-    <!-- Sección Videos -->
-    <section id="videos" class="videos-section">
-        <div class="section-header">
-            <i class="fas fa-video icon-title"></i>
-            <h2>Videos de Inspiración</h2>
-        </div>
-        <div class="videos-container">
-            <div class="video-wrapper">
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <i class="fas fa-play-circle play-icon"></i>
-                        <iframe 
-                            width="100%" 
-                            height="315"
-                            src="https://www.youtube.com/embed/x3F0mzmS8LQ?si=Hh7s6Q5kfVafGGfq"
-                            frameborder="0"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3>Mensaje de Esperanza</h3>
-                        <p>Un recordatorio del amor de Dios</p>
-                    </div>
-                </div>
-            </div>
-            <div class="video-wrapper">
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <i class="fas fa-play-circle play-icon"></i>
-                        <iframe 
-                            width="100%" 
-                            height="315"
-                            src="https://www.youtube.com/embed/TU_VIDEO_2"
-                            frameborder="0"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3>Reflexión Diaria</h3>
-                        <p>Encuentra paz en Su palabra</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="ad-container">
-            <!-- Aquí pondrás tu enlace de monetización -->
-            <div class="ad-box">
-                <p>📢 Espacio para tu anuncio</p>
-                <p class="ad-link">https://tuenlace.com</p>
-            </div>
-        </div>
-    </section>
+  <div class="video-grid">
+    <div class="video-card">
+      <div class="video-wrapper">
+        <div class="video-overlay" onclick="openAd(this)"></div>
+        <video controls preload="metadata">
+          <source src="assets/video1.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
 
-    <!-- Sección Reflexión -->
-    <section id="reflexion" class="reflexion-section">
-        <div class="section-header">
-            <i class="fas fa-heart icon-title"></i>
-            <h2>Reflexión del día</h2>
-        </div>
-        <div class="reflexion-content">
-            <blockquote>
-                <i class="fas fa-quote-left quote-icon"></i>
-                <p id="reflexion-text">"No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios que te fortalezco."</p>
-                <footer>- Isaías 41:10</footer>
-            </blockquote>
-        </div>
-    </section>
-</main>
+    <div class="video-card">
+      <div class="video-wrapper">
+        <div class="video-overlay" onclick="openAd(this)"></div>
+        <video controls preload="metadata">
+          <source src="assets/video2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <h2>Contacto y Redes Sociales</h2>
+  <div class="social-links">
+    <a href="https://web.facebook.com/palabrasgood" target="_blank">Facebook</a>
+    <a href="https://www.tiktok.com/@palabras_good" target="_blank">TikTok</a>
+    <a href="https://www.youtube.com/@SecretosBiblico" target="_blank">YouTube</a>
+  </div>
+</section>
 
 <footer>
-    <div class="footer-content">
-        <div class="footer-section">
-            <h4>Palabras Good</h4>
-            <p>Compartiendo la palabra de Dios con amor</p>
-        </div>
-        <div class="footer-section">
-            <h4>Síguenos</h4>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-            </div>
-        </div>
-        <div class="footer-section">
-            <p class="footer-copy">© 2026 Palabras Good. Todos los derechos reservados.</p>
-        </div>
-    </div>
+  <p>© 2026 Palabras Good — Dios te bendiga</p>
 </footer>
 
 <script src="js/script.js"></script>
 </body>
 </html>
+```
