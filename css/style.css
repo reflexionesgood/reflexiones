@@ -209,3 +209,170 @@ footer {
     height: 360px;
   }
 }
+
+
+/* ===========================
+   LIBROS
+=========================== */
+
+.books-section{
+  background:#f3f4f6;
+}
+
+.book-card{
+
+  max-width:1100px;
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+  gap:50px;
+
+  background:#fff;
+
+  padding:40px;
+
+  border-radius:24px;
+
+  box-shadow:
+  0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.book-image{
+
+  flex:0 0 280px;
+
+}
+
+.book-image img{
+
+  width:100%;
+  display:block;
+  border-radius:18px;
+
+  box-shadow:
+  0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.book-content{
+
+  flex:1;
+
+}
+
+.book-content h3{
+
+  font-family:"Merriweather", serif;
+
+  font-size:2rem;
+
+  margin-bottom:20px;
+
+}
+
+.book-content p{
+
+  color:#4b5563;
+
+  font-size:1.08rem;
+
+  margin-bottom:35px;
+
+  line-height:1.9;
+
+}
+
+.book-buttons{
+
+  display:flex;
+
+  justify-content:flex-start;
+
+}
+
+.btn{
+
+  display:inline-block;
+
+  text-decoration:none;
+
+  padding:14px 28px;
+
+  border-radius:12px;
+
+  font-weight:600;
+
+  transition:.3s;
+
+}
+
+.btn.primary{
+
+  background:#2563eb;
+
+  color:#fff;
+
+}
+
+.btn.primary:hover{
+
+  background:#1d4ed8;
+
+  transform:translateY(-3px);
+
+}
+
+.btn.secondary{
+
+  background:#fff;
+
+  color:#111827;
+
+  border:1px solid #d1d5db;
+
+}
+
+.btn.secondary:hover{
+
+  background:#f9fafb;
+
+  transform:translateY(-3px);
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.book-card{
+
+flex-direction:column;
+
+text-align:center;
+
+padding:30px;
+
+}
+
+.book-image{
+
+max-width:250px;
+
+}
+
+.book-buttons{
+
+  justify-content:center;
+
+}
+
+.book-buttons .btn{
+
+  width:100%;
+  max-width:260px;
+
+}
+
+}
