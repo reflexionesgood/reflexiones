@@ -1,32 +1,36 @@
-
-const verses = [
-  "john+3:16",
-  "psalms+23:1",
-  "jeremiah+33:3",
-  "isaiah+41:10",
-  "philippians+4:13"
-];
-
 async function getVerse() {
-  const random = Math.floor(Math.random() * verses.length);
-  const verse = verses[random];
 
-  try {
-    const response = await fetch(`https://bible-api.com/${verse}`);
-    const data = await response.json();
+    try {
 
-    document.getElementById("verse-box").innerText =
-      `${data.text} - ${data.reference}`;
-  } catch (error) {
-    document.getElementById("verse-box").innerText =
-      "Could not load verse.";
-  }
+        const response = await fetch("js/versiculos.json");
+        const verses = await response.json();
+
+        const today = new Date();
+
+        // Día del año (1-365)
+        const start = new Date(today.getFullYear(), 0, 0);
+        const diff = today - start;
+        const oneDay = 1000 * 60 * 60 * 24;
+        const day = Math.floor(diff / oneDay);
+
+        // Siempre el mismo versículo durante ese día
+        const verse = verses[(day - 1) % verses.length];
+
+        document.getElementById("verse-box").innerHTML = `
+            <p>${verse.texto}</p>
+            <br>
+            <strong>${verse.referencia}</strong>
+        `;
+
+    } catch (error) {
+
+        document.getElementById("verse-box").innerText =
+            "No se pudo cargar el versículo.";
+
+    }
+
 }
 
-function openAd(element) {
-  window.open("https://omg10.com/4/11239983", "_blank");
-  element.style.display = "none";
-}
+
 
 getVerse();
-

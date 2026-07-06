@@ -1,91 +1,142 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   background: #f9fafb;
   color: #111827;
+  line-height: 1.7;
 }
+
+/* ---------- Hero ---------- */
 
 .hero {
   text-align: center;
-  padding: 80px 20px;
-  background: white;
+  padding: 90px 20px;
+  background: #fff;
   border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .05);
 }
 
 .logo {
-  width: 90px;
+  width: 95px;
   margin-bottom: 20px;
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 5vw, 4rem);
-  margin-bottom: 10px;
+  font-family: "Merriweather", serif;
+  font-size: clamp(2.3rem, 5vw, 4.2rem);
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin-bottom: 15px;
 }
 
 .hero p {
-  color: #6b7280;
-  font-size: 1.1rem;
-}
-
-section {
-  padding: 60px 20px;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2rem;
-}
-
-#verse-box {
-  background: white;
-  max-width: 900px;
+  max-width: 700px;
   margin: auto;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-  font-size: 1.2rem;
-  text-align: center;
+  color: #6b7280;
+  font-size: 1.15rem;
   line-height: 1.8;
 }
 
+/* ---------- General ---------- */
+
+section {
+  padding: 70px 20px;
+}
+
+h2 {
+  font-family: "Merriweather", serif;
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* ---------- Versículo ---------- */
+
+#verse-box {
+  background: #fff;
+  max-width: 850px;
+  margin: auto;
+  padding: 45px;
+  border-radius: 24px;
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, .08),
+    0 4px 12px rgba(0, 0, 0, .04);
+  font-size: 1.25rem;
+  text-align: center;
+  line-height: 2;
+  transition: .3s ease;
+}
+
+#verse-box:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 22px 50px rgba(0, 0, 0, .10),
+    0 8px 20px rgba(0, 0, 0, .05);
+}
+
+#verse-box p {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+#verse-box strong {
+  display: inline-block;
+  margin-top: 18px;
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+
+/* ---------- Videos ---------- */
+
 .video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
 }
 
 .video-card {
-  background: white;
-  border-radius: 20px;
+  width: 320px;
+  background: #fff;
+  border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, .08),
+    0 4px 12px rgba(0, 0, 0, .05);
+  transition: .3s ease;
 }
 
-.video-wrapper {
-  position: relative;
+.video-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 22px 45px rgba(0, 0, 0, .12),
+    0 8px 20px rgba(0, 0, 0, .06);
 }
 
-iframe {
+.video-wrapper iframe {
   width: 100%;
+  height: 390px;
+  border: 0;
   display: block;
 }
 
-.video-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  cursor: pointer;
-}
+/* ---------- Contacto ---------- */
 
 .contact-section {
-  background: white;
+  background: #fff;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, .04);
 }
 
 .social-links {
@@ -98,24 +149,63 @@ iframe {
 .social-links a {
   text-decoration: none;
   color: #111827;
-  padding: 12px 20px;
+  font-weight: 500;
+  padding: 13px 24px;
   border: 1px solid #d1d5db;
-  border-radius: 12px;
-  transition: 0.3s;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, .05);
+  transition: .3s ease;
 }
 
 .social-links a:hover {
   background: #f3f4f6;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, .08);
 }
+
+/* ---------- Footer ---------- */
 
 footer {
   text-align: center;
   padding: 30px;
-  background: white;
+  background: #fff;
   border-top: 1px solid #e5e7eb;
   color: #6b7280;
+  font-size: .95rem;
 }
 
-/* ///// */
+/* ---------- Responsive ---------- */
 
+@media (max-width: 768px) {
 
+  .hero {
+    padding: 70px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  #verse-box {
+    padding: 30px;
+    font-size: 1.1rem;
+  }
+
+  #verse-box p {
+    font-size: 1.1rem;
+  }
+
+  .video-card {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .video-wrapper iframe {
+    height: 360px;
+  }
+}
